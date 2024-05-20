@@ -1,5 +1,6 @@
 import Imagem from '../Galeria/Imagem'
 import styled from 'styled-components'
+import BotaoIcone from "../BotaoIcone"
 
 const Overlay = styled.div`
 	background-color: rgba(0, 0, 0, 0.7);
@@ -28,16 +29,18 @@ const DialogEstilizado = styled.dialog`
     }
 `
 
-const ModalZoom = ({ foto }) => {
+const ModalZoom = ({ foto, aoFechar, aoAlternarFavorito }) => {
 	return (
 		<>
 			{foto && 
 				<>
 				<Overlay />
-				<DialogEstilizado open={!!foto}>
-					<Imagem foto={foto} expandida={true} />
-					<form method="dialog">
-						<button>OK</button>
+				<DialogEstilizado open={!!foto} onClose={aoFechar}>
+					<Imagem foto={foto} expandida={true}  aoAlternarFavorito={aoAlternarFavorito}/>
+					<form method="dialog">					
+						<BotaoIcone formMethod="dialog">
+							<img src="/icones/fechar.png" alt="Icone de fechar" />
+						</BotaoIcone>
 					</form>
 				</DialogEstilizado>
 				</>
