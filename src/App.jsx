@@ -7,6 +7,7 @@ import Cabecalho from "./componentes/Cabecalho"
 import BarraLateral from "./componentes/BarraLateral"
 import Banner from "./componentes/Banner"
 import Galeria from './componentes/Galeria'
+import ModalZoom from './componentes/ModalZoom'
 
 import fotos from './fotos.json'
 
@@ -72,6 +73,8 @@ const App = () => {
 				</ConteudoGaleria>
 			</MainContainer>
 		</AppContainer>
+
+		<ModalZoom foto={fotoSelecionada} />
     </FundoGradiente>
   )
 }
